@@ -83,37 +83,6 @@ Or build it yourself from source (see [Build](#build) below).
 
 ---
 
-## Repository Layout
-
-```
-asiolinkproinstaller.iss          Main Inno Setup installer source
-installer_payload/                Normalized files shipped by the rebuilt installer
-  common/                         Files shared across all configurations
-    root/                         32-bit runtime + documentation
-    x86-runtime/                  32-bit-only driver helper
-    x64-runtime/                  64-bit runtime + driver helper
-    system-drivers/               asiovadpro.dat
-  fixed/                          Patched DLLs from Give Academy patcher
-    root/                         Patched 32-bit asiolink.dll
-    x64/                          Patched 64-bit asiolink.dll
-  variants/                       Driver variants by device layout
-    4devices_8channels/           Default WDM layout (x86 + x64)
-    16devices_2channels/          Alternate WDM layout (x86 + x64)
-dist/                             Compiled installer output
-docs/
-  installer-flow.md               Step-by-step original vs. rebuilt flow comparison
-  github-release-template.md      Ready-to-paste release text for GitHub
-  github-about.txt                Repository description for GitHub
-  github-topics.txt               Repository topics/tags for GitHub
-assets/icons/                     Extracted installer icons + provenance notes
-tools/Extract-PeIcons.ps1         Reproducible icon extractor from PE binaries
-nsis_source/                      Recovered original NSIS installer source + bundled files
-uninstall_source/                 Recovered original NSIS uninstaller source
-original_extracted/               Reference extraction of original installer contents
-```
-
----
-
 ## Build
 
 Compile with [Inno Setup 6](https://jrsoftware.org/isinfo.php):
